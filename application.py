@@ -28,7 +28,7 @@ def bot():
         responded = True
     if 'dog' in incoming_msg:
         # return a cat pic
-        responseDog=request.get("https://dog.ceo/api/breeds/image/random/3")
+        responseDog=request.get("https://dog.ceo/api/breeds/image/random")
         l = responseDog.json()
         ans = l['message']
         msg.body('Love <3')
