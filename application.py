@@ -23,10 +23,12 @@ def bot():
         responded = True
     if 'cat' in incoming_msg:
         # return a cat pic
+        msg.body('Please Wait!!!')
         msg.media('https://cataas.com/cat')
         responded = True
     if 'dog' in incoming_msg:
         # return a cat pic
+        msg.body('Wait')
         msg.media('https://random.dog/')
         responded = True
     if not responded:
