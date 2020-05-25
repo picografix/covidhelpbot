@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 import urllib
 from twilio.twiml.messaging_response import MessagingResponse
-import random
+from random import randint
 
 app = Flask(__name__)
 
