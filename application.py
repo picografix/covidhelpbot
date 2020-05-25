@@ -37,8 +37,8 @@ def bot():
         msg.media(ans)
         responded = True
     if 'wallpaper' in incoming_msg:
-            l=incoming_message.split()
-            url=l[1]
+        l=incoming_message.split()
+        url=l[1]
         try: 
             from googlesearch import search 
         except ImportError:  
