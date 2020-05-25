@@ -66,7 +66,7 @@ def bot():
     if 'spam' in incoming_msg:
          # spams 
         l = incoming_msg.split()
-        countSpam = l[1]
+        countSpam = int(l[1])
         mess = l[2]
         for i in range(countSpam):
             msg.body(mess)
