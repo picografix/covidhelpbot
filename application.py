@@ -23,7 +23,7 @@ def bot():
         responded = True
     if 'cat' in incoming_msg:
         # return a cat pic
-        msg.body('Here You Go')
+        msg.body('Here You Go version 1.01')
         msg.media('https://cataas.com/cat')
         responded = True
     if 'dog' in incoming_msg:
@@ -32,7 +32,7 @@ def bot():
         l = responseDog.json()
         ans = l['message']
         msg.body('Love <3')
-        msg.media('ans')
+        msg.media(ans)
         responded = True
     if not responded:
         msg.body('I only know about famous quotes and cats, sorry!')
