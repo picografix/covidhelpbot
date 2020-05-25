@@ -67,11 +67,10 @@ def bot():
          # spams 
         l = incoming_msg.split()
         countSpam = int(l[1])
-        a = length(l[1])+4+1
+        a = length(l[1])+6
         mess = incoming_msg[a:]
         for i in range(countSpam):
-            jobhejnah= mess + "\n"
-            msg.body(jobhejnah)
+            msg.body(mess)
         responded = True
     if not responded:
         msg.body('I only know about famous quotes and cats, sorry! (ver 1.0.2)')
