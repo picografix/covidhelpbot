@@ -67,7 +67,7 @@ def bot():
          # spams 
         l = incoming_msg.split()
         countSpam = int(l[1])
-        mess = "".join(l[2:])
+        mess = " ".join(l[2:])
         for i in range(countSpam):
             msg.body(mess)
         responded = True
