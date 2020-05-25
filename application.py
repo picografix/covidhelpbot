@@ -63,6 +63,14 @@ def bot():
         msg.body('Here You Go ')
         msg.media('https://source.unsplash.com/random')
         responded = True
+    if 'spam' in incoming_msg:
+         # spams 
+        l = incoming_msg.split()
+        countSpam = l[1]
+        mess = l[2]
+        for i in range(countSpam):
+            msg.body(mess)
+        responded = True
     if not responded:
         msg.body('I only know about famous quotes and cats, sorry! (ver 1.0.2)')
     return str(resp)
