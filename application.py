@@ -58,6 +58,11 @@ def bot():
         alink=L[x].get('href')
         msg.media(alink)
         responded=True
+    if 'unsplash' in incoming_msg:
+         # return a cat pic
+        msg.body('Here You Go ')
+        msg.media('https://source.unsplash.com/random')
+        responded = True
     if not responded:
         msg.body('I only know about famous quotes and cats, sorry! (ver 1.0.2)')
     return str(resp)
