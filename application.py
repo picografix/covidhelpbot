@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 import urllib
 from twilio.twiml.messaging_response import MessagingResponse
+import random
 
 app = Flask(__name__)
 
@@ -54,14 +55,7 @@ def bot():
         soup=bs(a,'html.parser')
         L=soup.find_all('a',{'title':"Download photo"})
         x=randint(1,len(L)-1)
-        count=0
-        for i in L:
-            count+=1
-            if count==x:
-                alink=i.get('href')
-                break
-            else:
-                continue
+        alink=L[x].get('href')
         msg.media(alink)
         responded=True
     if not responded:
