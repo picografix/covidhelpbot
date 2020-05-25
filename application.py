@@ -23,13 +23,16 @@ def bot():
         responded = True
     if 'cat' in incoming_msg:
         # return a cat pic
-        msg.body('Please Wait!!!')
+        msg.body('Here You Go')
         msg.media('https://cataas.com/cat')
         responded = True
     if 'dog' in incoming_msg:
         # return a cat pic
-        msg.body('Wait')
-        msg.media('https://random.dog/')
+        responseDog=request.get("https://dog.ceo/api/breeds/image/random/3")
+        l = responseDog.json()
+        ans = l['message']
+        msg.body('Love <3')
+        msg.media('ans')
         responded = True
     if not responded:
         msg.body('I only know about famous quotes and cats, sorry!')
