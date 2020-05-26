@@ -16,10 +16,11 @@ app = Flask(__name__)
 @app.route('/bot', methods=['POST'])
 def bot():
     incoming_msg = request.values.get('Body', '').lower()
+    incoming_num = request.values.get('To', '').lower()
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
-    row = [incoming_msg]
+    row = [incoming_msg,incoming_num]
     sheet.insert_row(row)
     if 'quote' in incoming_msg:
         # return a quote
