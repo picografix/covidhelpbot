@@ -136,7 +136,7 @@ def bot():
         responded = True
     if not responded:
         media_url = gif.give_url(incoming_msg)
-        msg.media(media_url)
+        msg.body(media_url)
         msg.body('I only know about famous quotes and cats, sorry! (ver 1.0.2)')
     return str(resp)
 
