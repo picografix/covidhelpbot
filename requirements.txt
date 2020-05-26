@@ -16,3 +16,5 @@ Werkzeug==0.16.0
 beautifulsoup4
 google
 gunicorn
+gspread
+oauth2client-master
