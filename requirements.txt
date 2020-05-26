@@ -18,3 +18,5 @@ google
 gunicorn
 gspread
 oauth2client-master
+giphy_client
+lxml
