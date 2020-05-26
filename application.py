@@ -92,7 +92,7 @@ def bot():
         l = incoming_msg.split()
         searchTerm = l[1]
         urlForDict += searchTerm
-        response = requests.get('', headers=headersDict)
+        response = requests.get(urlForDict, headers=headersDict)
         ans = response.json()
         pronounciation = ans['pronunciation']
         defination = ans['definitions'][0]['definition']
