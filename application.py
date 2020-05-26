@@ -140,6 +140,8 @@ def bot():
         msg.body('I only know about famous quotes and cats, sorry! (ver 1.0.2)')
     return str(resp)
 
-
+@app.route('/')
+def index():
+    return "hello"
 if __name__ == '__main__':
     app.run()
