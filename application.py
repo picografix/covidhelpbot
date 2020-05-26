@@ -7,6 +7,7 @@ from random import randint
 import gspread
 import datetime
 from oauth2client.service_account import ServiceAccountCredentials
+import gif
 scope = ['https://spreadsheets.google.com/feeds']
 creds = ServiceAccountCredentials.from_json_keyfile_name('picografix-595144570179.json')
 client = gspread.authorize(creds)
@@ -134,6 +135,8 @@ def bot():
         print(i.text)
         responded = True
     if not responded:
+        media_url = gif.give_url(incoming_msg)
+        msg.media(media_url)
         msg.body('I only know about famous quotes and cats, sorry! (ver 1.0.2)')
     return str(resp)
 
