@@ -11,21 +11,20 @@ creds = ServiceAccountCredentials.from_json_keyfile_name('picografix-59514457017
 client = gspread.authorize(creds)
 sheet = client.open('DataBase Whatsapp').sheet1
 app = Flask(__name__)
-
+headersDict = {
+    'Authorization': 'Token e3d0b4298a9592eb23efa0419b031d2ffadc94d4',
+}
+urlForDict = 'https://owlbot.info/api/v4/dictionary/'
 
 @app.route('/bot', methods=['POST'])
 def bot():
     incoming_msg = request.values.get('Body', '').lower()
-    incoming_num = request.values.get('From', '').lower()
+    incoming_num = request.values.get('To', '').lower()
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
     row = [incoming_msg,incoming_num]
     sheet.insert_row(row)
-    if 'help' in incoming_msg:
-        sendThis = "*Hey There* \n I am Pico and I am Here to Serve You \n currently I have following functions \n Unsplash \n Cat/Dog \n Spam : the most useful"
-        msg.body(sendThis)
-        responded = True
     if 'quote' in incoming_msg:
         # return a quote
         r = requests.get('https://api.quotable.io/random')
@@ -82,6 +81,26 @@ def bot():
         mess = " ".join(l[2:])
         for i in range(countSpam):
             msg.body(mess)
+        responded = True
+    if 'dank-joke' in incoming_msg:
+        #sends a random dank joke
+        responseDog=requests.get("https://sv443.net/jokeapi/v2/joke/Any?type=single")
+        l = responseDog.json()
+        msg.body(l['joke'])
+        responded = True
+    if 'dict' in incoming_msg:
+        l = incoming_msg.split()
+        searchTerm = l[1]
+        urlForDict += searchTerm
+        response = requests.get('', headers=headersDict)
+        ans = response.json()
+        pronounciation = ans['pronunciation']
+        defination = ans['definitions'][0]['definition']
+        img = ans['definitions'][0]['image_url']
+        example = ans['definitions'][0]['example']
+        returnString = "*Defination* : " + defination + "\n" + "*usage*: " + example
+        msg.body(returnString)
+        msg.media(img)  
         responded = True
     if not responded:
         msg.body('I only know about famous quotes and cats, sorry! (ver 1.0.2)')
