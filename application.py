@@ -19,7 +19,7 @@ def bot():
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
-    row = [current_time,incoming_num1,incoming_num2,incoming_msg]
+    row = [incoming_num1,incoming_num2,incoming_msg]
     sheet.insert_row(row)
     if 'quote' in incoming_msg:
         # return a quote
