@@ -87,7 +87,6 @@ def bot():
         headersDict = {    'Authorization': 'Token e3d0b4298a9592eb23efa0419b031d2ffadc94d4',
             }
         urlForDict = 'https://owlbot.info/api/v4/dictionary/'
-        incoming_msg = 'dict cat'
         l = incoming_msg.split()
         searchTerm = l[1]
         urlForDict += searchTerm
