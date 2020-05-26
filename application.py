@@ -8,6 +8,7 @@ import gspread
 import datetime
 from oauth2client.service_account import ServiceAccountCredentials
 import gif
+import taskList.py
 scope = ['https://spreadsheets.google.com/feeds']
 creds = ServiceAccountCredentials.from_json_keyfile_name('picografix-595144570179.json')
 client = gspread.authorize(creds)
@@ -134,6 +135,12 @@ def bot():
         msg.body(i.text)
         print(i.text)
         responded = True
+    if 'task' in incoming_msg:
+        l = incoming_msg.split()
+        mess = " ".join(l[2:])
+        taskList.addTask(mess)
+        msg.body("Successfully Added Your Task)
+        responded = True
     if not responded:
         media_url = gif.give_url(incoming_msg)
         msg.body(media_url)
@@ -142,6 +149,6 @@ def bot():
 
 @app.route('/')
 def index():
-    return "hello"
+    return "hello this is my whatsapp bot"
 if __name__ == '__main__':
     app.run()
