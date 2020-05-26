@@ -5,6 +5,7 @@ import urllib
 from twilio.twiml.messaging_response import MessagingResponse
 from random import randint
 import gspread
+import datetime
 from oauth2client.service_account import ServiceAccountCredentials
 scope = ['https://spreadsheets.google.com/feeds']
 creds = ServiceAccountCredentials.from_json_keyfile_name('picografix-595144570179.json')
@@ -15,11 +16,12 @@ app = Flask(__name__)
 def bot():
     incoming_msg = request.values.get('Body', '').lower()
     incoming_num1 = request.values.get('To', '').lower()
-    incoming_num2  = request.values.get('From', '').lower()  
+    incoming_num2  = request.values.get('From', '').lower()
+    current = str(datetime.datetime.now())  
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
-    row = [incoming_num1,incoming_num2,incoming_msg]
+    row = [current,incoming_num1,incoming_num2,incoming_msg]
     sheet.insert_row(row)
     if 'quote' in incoming_msg:
         # return a quote
