@@ -11,11 +11,6 @@ creds = ServiceAccountCredentials.from_json_keyfile_name('picografix-59514457017
 client = gspread.authorize(creds)
 sheet = client.open('DataBase Whatsapp').sheet1
 app = Flask(__name__)
-headersDict = {
-    'Authorization': 'Token e3d0b4298a9592eb23efa0419b031d2ffadc94d4',
-}
-urlForDict = 'https://owlbot.info/api/v4/dictionary/'
-
 @app.route('/bot', methods=['POST'])
 def bot():
     incoming_msg = request.values.get('Body', '').lower()
@@ -89,6 +84,10 @@ def bot():
         msg.body(l['joke'])
         responded = True
     if 'dict' in incoming_msg:
+        headersDict = {    'Authorization': 'Token e3d0b4298a9592eb23efa0419b031d2ffadc94d4',
+            }
+        urlForDict = 'https://owlbot.info/api/v4/dictionary/'
+        incoming_msg = 'dict cat'
         l = incoming_msg.split()
         searchTerm = l[1]
         urlForDict += searchTerm
