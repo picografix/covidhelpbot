@@ -4,7 +4,12 @@ from bs4 import BeautifulSoup as bs
 import urllib
 from twilio.twiml.messaging_response import MessagingResponse
 from random import randint
-
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+scope = ['https://spreadsheets.google.com/feeds']
+creds = ServiceAccountCredentials.from_json_keyfile_name('picografix-595144570179.json')
+client = gspread.authorize(creds)
+sheet = client.open('DataBase Whatsapp').sheet1
 app = Flask(__name__)
 
 
@@ -14,6 +19,8 @@ def bot():
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
+    row = [incoming_msg]
+    sheet.insert_row(row)
     if 'quote' in incoming_msg:
         # return a quote
         r = requests.get('https://api.quotable.io/random')
