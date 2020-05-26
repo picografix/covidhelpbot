@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "picografix",
+  "private_key_id": "595144570179959a62e39df1743ec8bf147cec3a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCpOD5RzqUpEPuc\newwnAfWhWKAnj+7X9aN9QrarnmGVbkeISH8eviOMxB0cx+wbuIfvRYxheP0xAKHw\nxM8hCgxbndsAkuYnFE0eK8pxAxWsN+6aF+cetdhw/ccIF/Lfko/jxLu+3uq3jBZi\nJCZ/jnoQkxTIgEy6vI3gi2wsZ8EmT/x1b5a8tvCIdL7hjcYf8W/yvkJZIpVJGn4w\nLNzxE+fXBTlS2FK9R1E9WGdnvok/tNfdZa47Lc3gaSbU20vmjG+NxhQRuCRZYAcn\nySLl47l6D3k7S7mS0guZQkLcKwR8k92pQ4iiQiw14Ax4gf76wP6wWv4Qzo+1sEcV\n6GieAqFnAgMBAAECggEAJHJoPc9/1DoDr37zLZ2m7ZL8n7jJDTurdGm/lXQ9+WTw\nxEI1GwaB+qosyQuoZ4oVwSveIgpgokLMHmMNZ8TVx4/W4SdCqg0d1Q9CgZfT/a1o\nV0kprvwku6V1TmF2HsBe/IRdma1CqbjjA01c+2FRGivLsKmtnRTKjCALcv7/44PC\nEGrGsrNqxzVeG2GS1O0VnAmHd+DlmlnPrFgz/r12LK3TUaSl4cmxTc9QMrWJqbCL\n8I0jJ4Ae9W2xA3mD/AsNxEYO1sk6O3MQSpFlR8gx4qlfha/grtg7YLBt3RiOIHUX\nh7bzq173i8gRUqmcoj2mfwgoyKJfH/UBkMRqYeVxHQKBgQDZ3heST7zXgTfk/R3O\ndOva4ihCLT0D0gtjQyWZ8aEBrNFTkrNUt4cArJvMqt7egeT6RRklzD+NH2NLIDJI\nsO2xZlQ11HaweZMewVYxDL2D9NP5Hci2OEoBS6jVYmJw3ll5fZUHRH6GYDeccN2x\nIhX5GfyAtRPXqgio44FETF1pdQKBgQDG1mfpVwDDXoYpGzSBIWy/sQPqEwaKO7zG\npQfDa6iaAkRddVoTfyvHSMChaVWnU+cIONaXGAbPWR5VfI5A46TuPrwWiVp/jPev\nvZuQMPShiqaCVfr1YDEASMv40uyCXtRUpk8l2tG2vfO3+LeM2EE9IDf9d2JT9vDj\nKdohjCon6wKBgQDQgZXrh/aCBP/6Xigli46h16mR0/u96UrOv9d/olll4gAfzJlm\nLZK9mXQuByXuqz/6KSEtJHF53R1JK9IT8Yg6LGXRcrn4oRGk8IFNxhSl8izgEJoj\nknF5FfDJ7zOpM5NMC10SLIIulm0Cgp4YxTdkRHN8tk/8KZXKFJmFRNRtdQKBgQCg\nMZ0GIVI8FKuB8qkaYBN9XOAKdcmPFRHB+LOIffQYIDt0EFfB3XMn2zVW1cZsSOyZ\nczFwCaty4hnORctV/BGk4GYowgBnQutKazgps0dj3pDH8P1/M0BHOl8a2NQzNLNc\nf6DEnsbWs7LnRTqb/p6Q4KQ7UTOm8gyg99cFsCdGgQKBgAlBno9UFOZS5wA1aTPb\nd2NsPA58OoG/L2CxChIIy7mnoDQkNx9RUYN0bdGWat5DiSGuFz/bZGLwTBVb0HNE\n5gwDcuth6WhtauuCEWto4km8adQtXkE2KWhV0r6T9gVACCbphTXwBNniOXD41jjZ\nxp5/SOkx3Gp9/CDqO4QRdo8c\n-----END PRIVATE KEY-----\n",
+  "client_email": "picovision@picografix.iam.gserviceaccount.com",
+  "client_id": "102358305446980075862",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/picovision%40picografix.iam.gserviceaccount.com"
+}
