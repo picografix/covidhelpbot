@@ -25,6 +25,7 @@ def bot():
     if 'help' in incoming_msg:
         sendThis = "*Hey There* \n I am Pico and I am Here to Serve You \n currently I have following functions \n Unsplash \n Cat/Dog \n Spam : the most useful"
         msg.body(sendThis)
+        responded = True
     if 'quote' in incoming_msg:
         # return a quote
         r = requests.get('https://api.quotable.io/random')
