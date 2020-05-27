@@ -8,7 +8,7 @@ import gspread
 import datetime
 from oauth2client.service_account import ServiceAccountCredentials
 import gif
-import taskList.py
+import taskList
 scope = ['https://spreadsheets.google.com/feeds']
 creds = ServiceAccountCredentials.from_json_keyfile_name('picografix-595144570179.json')
 client = gspread.authorize(creds)
@@ -139,7 +139,7 @@ def bot():
         l = incoming_msg.split()
         mess = " ".join(l[2:])
         taskList.addTask(mess)
-        msg.body("Successfully Added Your Task)
+        msg.body("Successfully Added Your Task")
         responded = True
     if not responded:
         media_url = gif.give_url(incoming_msg)
