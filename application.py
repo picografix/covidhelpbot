@@ -17,14 +17,13 @@ app = Flask(__name__)
 @app.route('/bot', methods=['POST'])
 def bot():
     incoming_msg = request.values.get('Body', '').lower()
-    incoming_num1 = request.values.get('To', '').lower()
-    incoming_num2  = request.values.get('From', '').lower()
+    incoming_num1 = request.values.get('To', '').lower() #although not necessary but still
+    incoming_num2  = request.values.get('From', '').lower()#the incoming message mobile number
     current = str(datetime.datetime.now())  
     resp = MessagingResponse()
     msg = resp.message()
+    completionMsg = "" #this is to store the displayed result
     responded = False
-    row = [current,incoming_num1,incoming_num2,incoming_msg]
-    sheet.insert_row(row,index=2)
     if 'quote' in incoming_msg:
         # return a quote
         r = requests.get('https://api.quotable.io/random')
@@ -35,11 +34,13 @@ def bot():
             quote = 'I could not retrieve a quote at this time, sorry.'
         msg.body(quote)
         responded = True
+        completionMsg = quote
     if 'cat' in incoming_msg:
         # return a cat pic
-        msg.body('Here You Go version 1.01')
+        msg.body('I love cats')
         msg.media('https://cataas.com/cat')
         responded = True
+        completionMsg = 'https://cataas.com/cat'
     if 'dog' in incoming_msg:
         # return a cat pic
         responseDog=requests.get("https://dog.ceo/api/breeds/image/random")
@@ -48,6 +49,7 @@ def bot():
         msg.body('Love <3')
         msg.media(ans)
         responded = True
+        completionMsg = ans
     if 'wallpaper' in incoming_msg:
         l=incoming_message.split()
         url=l[1]
@@ -55,10 +57,9 @@ def bot():
             from googlesearch import search 
         except ImportError:  
             print("No module named 'google' found") 
-        
+            completionMsg = "No module named 'google' found"
         # to search 
         query = url+" unsplash"
-        
         for j in search(query, tld="co.in", num=1, stop=4, pause=2):
             if "https://unsplash.com/s/photos" in j: 
                 url=j 
@@ -68,12 +69,15 @@ def bot():
         x=randint(1,len(L)-1)
         alink=L[x].get('href')
         msg.media(alink)
+        completionMsg=alink
         responded=True
     if 'unsplash' in incoming_msg:
          # return a cat pic
         msg.body('Here You Go ')
-        msg.media('https://source.unsplash.com/random')
+        un_img = 'https://source.unsplash.com/random'
+        msg.media(un_img)
         responded = True
+        completionMsg = un_img
     if 'spam' in incoming_msg:
          # spams 
         l = incoming_msg.split()
@@ -81,12 +85,14 @@ def bot():
         mess = " ".join(l[2:])
         for i in range(countSpam):
             msg.body(mess)
+        completionMsg = "Succesfully spammed"
         responded = True
     if 'dank-joke' in incoming_msg:
         #sends a random dank joke
         responseDog=requests.get("https://sv443.net/jokeapi/v2/joke/Any?type=single")
         l = responseDog.json()
         msg.body(l['joke'])
+        completionMsg = l['joke']
         responded = True
     if 'dict' in incoming_msg:
         headersDict = {    'Authorization': 'Token e3d0b4298a9592eb23efa0419b031d2ffadc94d4',
@@ -105,6 +111,7 @@ def bot():
         returnString = "*Defination* : " + defination + "\n" + "*usage*: " + example
         msg.body(returnString)
         msg.media(img)  
+        completionMsg="successfully sent"
         responded = True
     if 'que' in incoming_msg:
         import urllib.request, urllib.parse, urllib.error
@@ -134,17 +141,22 @@ def bot():
         i=L[1]
         msg.body(i.text)
         print(i.text)
+        completionMsg = i.text
         responded = True
     if 'task' in incoming_msg:
         l = incoming_msg.split()
         mess = " ".join(l[2:])
         taskList.addTask(mess)
         msg.body("Successfully Added Your Task")
+        completionMsg = "Successfully Added Your Task"
         responded = True
     if not responded:
         media_url = gif.give_url(incoming_msg)
         msg.body(media_url)
         msg.body('I only know about famous quotes and cats, sorry! (ver 1.0.2)')
+        completionMsg ="returned deefault value"
+    row = [current,incoming_num1,incoming_num2,incoming_msg,completionMsg]
+    sheet.insert_row(row,index=2)
     return str(resp)
 
 @app.route('/')
