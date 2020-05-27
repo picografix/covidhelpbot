@@ -24,7 +24,7 @@ def bot():
     msg = resp.message()
     responded = False
     row = [current,incoming_num1,incoming_num2,incoming_msg]
-    sheet.insert_row(row)
+    sheet.insert_row(row,index=2)
     if 'quote' in incoming_msg:
         # return a quote
         r = requests.get('https://api.quotable.io/random')
