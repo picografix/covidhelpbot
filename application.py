@@ -35,7 +35,7 @@ def bot():
         msg.body(quote)
         responded = True
         completionMsg = quote
-    if 'cat' in incoming_msg:
+    if 'chalhat' in incoming_msg:
         # return a cat pic
         msg.body('I love cats')
         msg.media('https://cataas.com/cat')
