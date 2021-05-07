@@ -9,6 +9,10 @@ import datetime
 from oauth2client.service_account import ServiceAccountCredentials
 import gif
 import taskList
+import twitter
+import datetime
+
+
 scope = ['https://spreadsheets.google.com/feeds']
 creds = ServiceAccountCredentials.from_json_keyfile_name('picografix-595144570179.json')
 client = gspread.authorize(creds)
@@ -24,6 +28,49 @@ def bot():
     msg = resp.message()
     completionMsg = "" #this is to store the displayed result
     responded = False
+    now = datetime.datetime.now()
+    # now = datetime.now()
+
+    current_time = now.strftime("%H:%M:%S")
+    
+    logs="Current Time =", current_time+ incoming_num2 + "Message : "+ incoming_msg
+    print(logs)
+    if 'bothelp' in incoming_msg:
+        
+        reply = "Hi I am PicoBot, How can I help you ?\n\nType 'contact' for developers contact \n\nType 'tasks' for list of available tasks"
+        msg.body(reply)
+        # msg.body("test msg")
+        responded=True
+        completionMsg=reply
+    elif ('covidhelp' in incoming_msg):
+        l= incoming_msg.split()
+        reply = ""
+        try:
+            city = l[1]
+            required = l[2]
+            leads = twitter.input_triggers_spinner(city,required)
+            print("Lead length=")
+            print(len(leads))
+            
+            for lead in leads:
+                reply += "\n"+lead['full_text']+ "\n-----------------"
+        except:
+            reply= "Please put your query in given format"
+        msg.body(reply)
+        responded=True
+        completionMsg=reply
+
+    if 'contact' in incoming_msg:
+        reply= "Hi I am Gauransh Soni\nSophomore @ IIT Delhi\nEmail - picografix@gmail.com\nContact No. 9462447291"
+        msg.body(reply)
+        responded=True
+        completionMsg=reply
+    if 'task' in incoming_msg:
+        reply = "Here is a list of items I can do\n1)Type 'covidhelp <cityname> <Oxygen or Remedesivir or Plasma>' to get recent leads for asked item\n2)Type 'covidinfo <state>' to get recent statistics of covid cases in your state\n3)Type 'emergency <pincode>' to get the contact number of emergency services in your area\n4)Type 'covidvaccine <pincode>' to check availability of vaccine in your area\n5)Type 'help' to get more info"
+        msg.body(reply)
+        responded=True
+        completionMsg=reply
+    
     if 'quote' in incoming_msg:
         # return a quote
         r = requests.get('https://api.quotable.io/random')
@@ -35,21 +82,12 @@ def bot():
         msg.body(quote)
         responded = True
         completionMsg = quote
-    if 'chalhat' in incoming_msg:
+    if 'aurbhai' in incoming_msg:
         # return a cat pic
         msg.body('I love cats')
         msg.media('https://cataas.com/cat')
         responded = True
         completionMsg = 'https://cataas.com/cat'
-    if 'dog' in incoming_msg:
-        # return a cat pic
-        responseDog=requests.get("https://dog.ceo/api/breeds/image/random")
-        l = responseDog.json()
-        ans = l['message']
-        msg.body('Love <3')
-        msg.media(ans)
-        responded = True
-        completionMsg = ans
     if 'wallpaper' in incoming_msg:
         l=incoming_message.split()
         url=l[1]
@@ -143,7 +181,7 @@ def bot():
         print(i.text)
         completionMsg = i.text
         responded = True
-    if 'task' in incoming_msg:
+    if 'googletask' in incoming_msg:
         l = incoming_msg.split()
         mess = " ".join(l[2:])
         taskList.addTask(mess)
@@ -151,10 +189,8 @@ def bot():
         completionMsg = "Successfully Added Your Task"
         responded = True
     if not responded:
-        media_url = gif.give_url(incoming_msg)
-        msg.body(media_url)
-        msg.body('I only know about famous quotes and cats, sorry! (ver 1.0.2)')
-        completionMsg ="returned deefault value"
+        msg.body('type bothelp')
+        completionMsg ="Job Done"
     row = [current,incoming_num1,incoming_num2,incoming_msg,completionMsg]
     sheet.insert_row(row,index=2)
     return str(resp)
