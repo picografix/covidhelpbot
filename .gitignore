@@ -2,3 +2,5 @@ config.py
 __pycache__
 .ipynb_checkpoints
 .vscode
+picografix-595144570179.json
+credentials.json
