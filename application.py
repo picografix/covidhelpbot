@@ -7,13 +7,12 @@ from random import randint
 import gspread
 import datetime
 from oauth2client.service_account import ServiceAccountCredentials
-import taskList
 import twitter
 import datetime
-
+from config import creds
 
 scope = ['https://spreadsheets.google.com/feeds']
-creds = ServiceAccountCredentials.from_json_keyfile_name('picografix-595144570179.json')
+# creds = ServiceAccountCredentials.from_json_keyfile_name('picografix-595144570179.json')
 client = gspread.authorize(creds)
 sheet = client.open('DataBase Whatsapp').sheet1
 app = Flask(__name__)
@@ -180,13 +179,7 @@ def bot():
         print(i.text)
         completionMsg = i.text
         responded = True
-    if 'googletask' in incoming_msg:
-        l = incoming_msg.split()
-        mess = " ".join(l[2:])
-        taskList.addTask(mess)
-        msg.body("Successfully Added Your Task")
-        completionMsg = "Successfully Added Your Task"
-        responded = True
+    
     if not responded:
         msg.body('type bothelp')
         completionMsg ="Job Done"
