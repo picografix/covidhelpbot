@@ -1,2 +1,4 @@
-credentials.json
-message.py
+config.py
+__pycache__
+.ipynb_checkpoints
+.vscode

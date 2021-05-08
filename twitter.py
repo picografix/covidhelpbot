@@ -4,12 +4,7 @@ import pytz
 import timeago
 import tweepy
 import pandas as pd
-twitter_keys = {
-        'consumer_key':        'vrfP4lNGgGwsv2V8khvGi5Fdk',
-        'consumer_secret':     'NCRYOahLbzDceuXXCPjcdGLDdBIP7ZOMNVCgsQEQY0HKsbiBO7',
-        'access_token_key':    '2487641515-wG96MKAyId7SHZSG8R567HsfKTdkb4ktbyyivtf',
-        'access_token_secret': 'iwm0EiVrxclNZEYd4YnOmWq3xZ03GfelfIAMEXxjxztWJ'
-    }
+from config import twitter_keys
 
 s1=['created_at','id_str','full_text','retweet_count','user.name','user.screen_name',
 'user.followers_count','user.verified','user.favourites_count']

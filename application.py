@@ -7,7 +7,6 @@ from random import randint
 import gspread
 import datetime
 from oauth2client.service_account import ServiceAccountCredentials
-import gif
 import taskList
 import twitter
 import datetime

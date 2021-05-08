@@ -1,6 +1,0 @@
-    
-
-
- Api key twitter: vrfP4lNGgGwsv2V8khvGi5Fdk
- secret key = NCRYOahLbzDceuXXCPjcdGLDdBIP7ZOMNVCgsQEQY0HKsbiBO7
- bearer token: - AAAAAAAAAAAAAAAAAAAAAPdWPQEAAAAAeNVERX0h2I8lke6mgW2jPjkaXc0%3Ds7OCKPD4QR640ui8zgD3dZyNrdn8g5d02K4osZR5S7G9C7Ttuj
