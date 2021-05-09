@@ -6,8 +6,8 @@ import requests
 # from scipy.integrate import solve_ivp
 import datetime
 from copy import deepcopy
-from scipy.stats import norm
-from scipy.optimize import differential_evolution
+# from scipy.stats import norm
+# from scipy.optimize import differential_evolution
 import pdb
 from IPython.core.display import HTML
 from math import ceil, floor
@@ -126,7 +126,8 @@ def giveArray(df,s,commulative=True):
         confirmed[i] = confirmed[i] + confirmed[i-1]
     
     return confirmed,recovered, death, active
-    
+
+
 def allStates(State_dict, india =True):
     all_states = list(State_dict.keys())
     all_states.pop(all_states.index('dateymd'))

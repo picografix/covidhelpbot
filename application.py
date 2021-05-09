@@ -11,6 +11,7 @@ import twitter
 import datetime
 from config import creds
 import cowin
+import statistics
 
 
 app = Flask(__name__)
@@ -99,6 +100,19 @@ def bot():
                 msg.body(reply)
             responded=True
             completionMsg=reply
+    if 'covidinfo' in incoming_msg:
+        l= incoming_msg.split()
+        state = 'india'
+        if(len(l)>1):
+            state=""
+            for i in l[1:]:
+                state+= i+" "
+            state=state[:-1]
+        c,r,d,a = statistics.driver(state)
+        reply = "\nConfirmed: "+ str(c) +"\nRecovered: "+str(r)+"\nActive: "+str(a)+"\nDeceased: "+str(d)
+        msg.body(reply)
+        responded=True
+        completionMsg=reply
     if 'contact' in incoming_msg:
         reply= "Hi I am Gauransh Soni\nSophomore @ IIT Delhi\nEmail - picografix@gmail.com\nContact No. 9462447291"
         msg.body(reply)

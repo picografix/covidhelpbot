@@ -11344,3 +11344,49 @@ Location: Ganesh Nagar, Road, Rama Krishna Puram, Kota, Rajasthan 324010
 Last Verified @ 09/05/2021 01:36 PM
 #Covid19IndiaHelp
 ----------------- 
+2021-05-09 16:29:46.630713 +14155238886 +919462447291 running? Job Done 
+2021-05-09 16:29:54.968535 +14155238886 +919462447291 covidinfo 
+Confirmed: 22295234.0
+Recovered: 18311454.0
+Active: 3741377.0
+Deceased: 242403.0 
+2021-05-09 16:30:53.822641 +14155238886 +919462447291 covidinfo rajasthan 
+Confirmed: 738786.0
+Recovered: 533973.0
+Active: 199307.0
+Deceased: 5506.0 
+2021-05-09 16:32:34.285195 +14155238886 +919462447291 covidinfo uttar pradesh 
+Confirmed: 1480315.0
+Recovered: 1219409.0
+Active: 245736.0
+Deceased: 15170.0 
+2021-05-09 16:36:29.369398 +14155238886 +919462447291 covidinfo 
+Confirmed: 22295234.0
+Recovered: 18311454.0
+Active: 3741377.0
+Deceased: 242403.0 
+2021-05-09 16:36:30.099891 +14155238886 +919462447291 covidinfo rajasthan 
+Confirmed: 738786.0
+Recovered: 533973.0
+Active: 199307.0
+Deceased: 5506.0 
+2021-05-09 16:36:30.604466 +14155238886 +919462447291 covidinfo uttar pradesh 
+Confirmed: 1480315.0
+Recovered: 1219409.0
+Active: 245736.0
+Deceased: 15170.0 
+2021-05-09 16:36:38.100804 +14155238886 +918279756297 covidinfo uttar pradesh 
+Confirmed: 1480315.0
+Recovered: 1219409.0
+Active: 245736.0
+Deceased: 15170.0 
+2021-05-09 16:38:11.383663 +14155238886 +919462447291 covidinfo uttar pradesh 
+Confirmed: 1480315
+Recovered: 1219409
+Active: 245736
+Deceased: 15170 
+2021-05-09 16:38:19.766845 +14155238886 +918279756297 covidinfo maharashtra 
+Confirmed: 5053336
+Recovered: 4347592
+Active: 630468
+Deceased: 75276 
