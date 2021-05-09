@@ -10,11 +10,9 @@ from oauth2client.service_account import ServiceAccountCredentials
 import twitter
 import datetime
 from config import creds
+import cowin
 
-scope = ['https://spreadsheets.google.com/feeds']
-# creds = ServiceAccountCredentials.from_json_keyfile_name('picografix-595144570179.json')
-client = gspread.authorize(creds)
-sheet = client.open('DataBase Whatsapp').sheet1
+
 app = Flask(__name__)
 @app.route('/bot', methods=['POST'])
 def bot():
@@ -57,7 +55,50 @@ def bot():
         msg.body(reply)
         responded=True
         completionMsg=reply
+    elif('covidvaccine' in incoming_msg):
+        if('drive' in incoming_msg):
+            
+            reply = cowin.states()
+            msg.body(reply)
+            responded=True
+            completionMsg=reply
+        elif('state' in incoming_msg):
+            
+            l=incoming_msg.split()
+            id= int(l[2])
+            reply= cowin.districts(id)
+            # except:
+            #     reply= "Please put your query in given format"     
+            msg.body(reply)
+            responded=True
+            completionMsg=reply
+        else:
+            l= incoming_msg.split()
+            reply = ""
+            # try:
+                
+            #     pincode = l[1]
+            #     date = l[2]
+            #     min_age_limit = 45
+                
 
+            #     reply = cowin.driver(pincode,date,min_age_limit)             
+            # except:
+            #     reply= "Please put your query in given format"
+            
+            pincode = l[1]
+            # date = l[2]
+            min_age_limit = 45
+                
+
+            reply = cowin.driver(pincode)
+            # print(reply[10])
+            try:
+                msg.body(reply[:699])
+            except:
+                msg.body(reply)
+            responded=True
+            completionMsg=reply
     if 'contact' in incoming_msg:
         reply= "Hi I am Gauransh Soni\nSophomore @ IIT Delhi\nEmail - picografix@gmail.com\nContact No. 9462447291"
         msg.body(reply)
@@ -183,8 +224,15 @@ def bot():
     if not responded:
         msg.body('type bothelp')
         completionMsg ="Job Done"
-    row = [current,incoming_num1,incoming_num2,incoming_msg,completionMsg]
-    sheet.insert_row(row,index=2)
+    row = [current,incoming_num1[9:],incoming_num2[9:],incoming_msg,completionMsg]
+    f = open("output.txt", "a")
+    if incoming_msg!="":
+        myadd=""
+        for string in row:
+            myadd+= string+" "
+        f.write(myadd+"\n")
+        f.close()
+    # sheet.insert_row(row,index=2)
     return str(resp)
 
 @app.route('/')
