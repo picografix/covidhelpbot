@@ -12,7 +12,7 @@ import datetime
 from config import creds
 # from config import client
 from news import getNews
-
+import message
 import cowin
 import statistics
 
@@ -69,9 +69,11 @@ def bot():
             news = getNews(category)
             newstock=news["data"]
             for i in range(len(newstock)):
-                reply+=news["data"][i]["title"]+"\n\n"+news["data"][i]["content"]
+                reply=news["data"][i]["title"]+"\n\n"+news["data"][i]["content"]
                 alink=news["data"][i]["imageUrl"]
-            msg.media(alink)
+                # msg.media(alink)
+                message.send(incoming_num2,reply,[alink])
+
         except:
             reply= "Please put your query in given format"
         msg.body(reply)

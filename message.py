@@ -18,4 +18,4 @@ def send(incoming,body,media):
                               to=incoming 
                           )
 # print(message.sid)
-send('whatsapp:+918279756297','helllo',['https://demo.twilio.com/owl.png'])
+# send('whatsapp:+918279756297','helllo',['https://demo.twilio.com/owl.png'])
