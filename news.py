@@ -7,7 +7,20 @@ Parse using beautiful soup and lxml to form the newsDictionary.
 
 import requests
 from bs4 import BeautifulSoup
+import urllib.request, urllib.parse, urllib.error
+import xml.etree.ElementTree as ET
+import ssl
 
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
+
+
+
+try: 
+    from googlesearch import search 
+except ImportError:  
+    print("No module named 'google' found") 
 
 def getNews(category):
     newsDictionary = {
@@ -15,77 +28,79 @@ def getNews(category):
         'category': category,
         'data': []
     }
-
-    try:
-        htmlBody = requests.get('https://www.inshorts.com/en/read/' + category)
-    except requests.exceptions.RequestException as e:
-        newsDictionary['success'] = False
-        newsDictionary['errorMessage'] = str(e.message)
-        return newsDictionary
-
-    soup = BeautifulSoup(htmlBody.text, 'lxml')
-    newsCards = soup.find_all(class_='news-card')
-    if not newsCards:
-        newsDictionary['success'] = False
-        newsDictionary['errorMessage'] = 'Invalid Category'
-        return newsDictionary
-
-    for card in newsCards:
+    query = category+" inshorts"
+    for j in search(query, tld="co.in", num=1, stop=3, pause=2):
+        url=j 
         try:
-            title = card.find(class_='news-card-title').find('a').text
-        except AttributeError:
-            title = None
+            htmlBody = requests.get(url)
+        except requests.exceptions.RequestException as e:
+            newsDictionary['success'] = False
+            newsDictionary['errorMessage'] = str(e.message)
+            return newsDictionary
 
-        try:
-            imageUrl = card.find(
-                class_='news-card-image')['style'].split("'")[1]
-        except AttributeError:
-            imageUrl = None
+        soup = BeautifulSoup(htmlBody.text, 'lxml')
+        newsCards = soup.find_all(class_='news-card')
+        if not newsCards:
+            newsDictionary['success'] = False
+            newsDictionary['errorMessage'] = 'Invalid Category'
+            return newsDictionary
 
-        try:
-            url = ('https://www.inshorts.com' + card.find(class_='news-card-title')
-                   .find('a').get('href'))
-        except AttributeError:
-            url = None
+        for card in newsCards:
+            try:
+                title = card.find(class_='news-card-title').find('a').text
+            except AttributeError:
+                title = None
 
-        try:
-            content = card.find(class_='news-card-content').find('div').text
-        except AttributeError:
-            content = None
+            try:
+                imageUrl = card.find(
+                    class_='news-card-image')['style'].split("'")[1]
+            except AttributeError:
+                imageUrl = None
 
-        try:
-            author = card.find(class_='author').text
-        except AttributeError:
-            author = None
+            try:
+                url = ('https://www.inshorts.com' + card.find(class_='news-card-title')
+                      .find('a').get('href'))
+            except AttributeError:
+                url = None
 
-        try:
-            date = card.find(clas='date').text
-        except AttributeError:
-            date = None
+            try:
+                content = card.find(class_='news-card-content').find('div').text
+            except AttributeError:
+                content = None
 
-        try:
-            time = card.find(class_='time').text
-        except AttributeError:
-            time = None
+            try:
+                author = card.find(class_='author').text
+            except AttributeError:
+                author = None
 
-        try:
-            readMoreUrl = card.find(class_='read-more').find('a').get('href')
-        except AttributeError:
-            readMoreUrl = None
+            try:
+                date = card.find(clas='date').text
+            except AttributeError:
+                date = None
 
-        newsObject = {
-            'title': title,
-            'imageUrl': imageUrl,
-            'url': url,
-            'content': content,
-            'author': author,
-            'date': date,
-            'time': time,
-            'readMoreUrl': readMoreUrl
-        }
+            try:
+                time = card.find(class_='time').text
+            except AttributeError:
+                time = None
 
-        newsDictionary['data'].append(newsObject)
+            try:
+                readMoreUrl = card.find(class_='read-more').find('a').get('href')
+            except AttributeError:
+                readMoreUrl = None
+
+            newsObject = {
+                'title': title,
+                'imageUrl': imageUrl,
+                'url': url,
+                'content': content,
+                'author': author,
+                'date': date,
+                'time': time,
+                'readMoreUrl': readMoreUrl
+            }
+
+            newsDictionary['data'].append(newsObject)
 
     return newsDictionary
 
-
+# print(len(getNews("disease")['data']))

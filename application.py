@@ -67,9 +67,11 @@ def bot():
         try:
             category = l[1]
             news = getNews(category)
-            reply+=news["data"][0]["title"]+"\n\n"+news["data"][0]["content"]
-            alink=news["data"][0]["imageUrl"]
-            msg.media(alink)
+            newstock=news["data"]
+            for i in range(len(newstock)):
+                reply+=news["data"][i]["title"]+"\n\n"+news["data"][i]["content"]
+                alink=news["data"][i]["imageUrl"]
+                msg.media(alink)
         except:
             reply= "Please put your query in given format"
         msg.body(reply)
