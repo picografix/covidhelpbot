@@ -10,8 +10,12 @@ from oauth2client.service_account import ServiceAccountCredentials
 import twitter
 import datetime
 from config import creds
+
+from news import getNews
+
 import cowin
 import statistics
+
 
 
 app = Flask(__name__)
@@ -56,6 +60,22 @@ def bot():
         msg.body(reply)
         responded=True
         completionMsg=reply
+
+    elif('covidnews' in incoming_msg):
+        l= incoming_msg.split()
+        reply = ""
+        try:
+            category = l[1]
+            news = getNews(category)
+            reply+=news["data"][0]["title"]+"\n\n"+news["data"][0]["content"]
+            alink=news["data"][0]["imageUrl"]
+            msg.media(alink)
+        except:
+            reply= "Please put your query in given format"
+        msg.body(reply)
+        responded=True
+        completionMsg=reply
+
     elif('covidvaccine' in incoming_msg):
         if('drive' in incoming_msg):
             
@@ -91,6 +111,7 @@ def bot():
             # date = l[2]
             min_age_limit = 45
                 
+
 
             reply = cowin.driver(pincode)
             # print(reply[10])
