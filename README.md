@@ -16,14 +16,45 @@ I can help you find verified leads from twitter just by sending a whatsapp messa
 
     covidhelp <city> <requirement>
 For eg. to get info about beds in **Delhi** send message `covidhelp delhi beds`
+### Covid Vaccine Availability
+I can tell you if vaccine is available in your district or not, if yes when and where, also how many districts are allowing vaccination for your age (18+ or 45+)
+
+    covidvaccine drive 
+  
+
+>  To get 	list of states with their code
+
+   
+
+    covidvaccine state <State_Code>
+
+> To get list of districts with active vaccination drive and their
+> district codes
+
+    covidvaccine <pincode> or covidvaccine <district-code>
+
+> To check slot availability
+
+### Covid News
+
+    covidnews coronavirus
+    
+
+> To get the latest news from inshort straight into your whatsapp
+### Covid Statistics
+
+    covidinfo or covidinfo <statename>
+    
+
+> To get the recent statistics of **COVID19**
 
 ###  More tasks adding Soon
 
-Upcoming Targets                                         |
-|----------------|
-|Message Database|            
-|Covid Vaccine Info in image format|          
-|List of emergency Contact in locality implementation|
-|Covid Statistics|
-|Covid News|
+ - [ ] Message Database
+ - [x] Covid Vaccine Info
+ - [ ] List of emergency contacts
+ - [x] Covid Statistics
+ - [x] Covid News
+
+
 
