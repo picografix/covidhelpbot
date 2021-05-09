@@ -10,7 +10,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 import twitter
 import datetime
 from config import creds
-from config import client
+# from config import client
 from news import getNews
 
 import cowin

@@ -11503,3 +11503,12 @@ India beat NZ 3-2 to enter CWG hockey finals
 
 In the CWG men's hockey semi-final against New Zealand on Saturday, India got a 3-2 victory, securing their place in the finals. The team rose from a 2-0 score to a 3-2 score, and will now been seen playing the finals against Australia on Sunday. Interestingly, in the last CWG in Delhi, the same teams met in the finals.  
 2021-05-09 17:20:17.643430 +14155238886 +918279756297 covidnews assembly election Please put your query in given format 
+2021-05-09 17:52:53.967485 +14155238886 +918279756297 covidnews corona Please put your query in given format 
+2021-05-09 17:53:04.101040 +14155238886 +918279756297 covidnews covid Please put your query in given format 
+2021-05-09 17:53:26.218606 +14155238886 +918279756297 covidnews disease Please put your query in given format 
+2021-05-09 17:56:10.198965 +14155238886 +918279756297 covidnews disease Please put your query in given format 
+2021-05-09 18:02:15.398192 +14155238886 +918279756297 bothelp Hi I am PicoBot, How can I help you ?
+
+Type 'contact' for developers contact 
+
+Type 'tasks' for list of available tasks 
