@@ -11453,3 +11453,53 @@ Contact Number: 8792739537
 ✅Recovered: 18311454
 ✅Active: 3741377
 ✅Deceased: 242403 
+2021-05-09 16:56:16.473221 +14155238886 +919462447291 covidinfo rajasthan 
+✅Confirmed: 738786
+✅Recovered: 533973
+✅Active: 199307
+✅Deceased: 5506 
+2021-05-09 17:17:18.357739 +14155238886 +918279756297 bothelp Hi I am PicoBot, How can I help you ?
+
+Type 'contact' for developers contact 
+
+Type 'tasks' for list of available tasks 
+2021-05-09 17:17:25.637101 +14155238886 +918279756297 covidnews disease 
+Encephalitis gives way to 319 deaths in UP
+
+
+In only 24-hours, 10-more children have succumbed to Encephalitis at BRD Medical College in Gorakhpur, UP. The death toll for this disease has reached to 319 out of 1560 admitted for this disease (mostly children). Encephalitis is acute inflammation (swelling up) of the brain resulting either from a viral-infection or when the body's own immune system mistakenly attacks brain tissue. 
+2021-05-09 17:17:57.143558 +14155238886 +918279756297 covidnews sports 
+Team India squad for WTC final and Test series against England announced
+
+
+The BCCI today announced the Team India squad for the inaugural ICC World Test Championship (WTC) final and the five-match Test series against England. The BCCI has named 20 members in the squad with KL Rahul and Wriddhiman Saha's selection being subject to fitness clearance. Abhimanyu Easwaran, Prasidh Krishna, Avesh Khan and Arzan Nagwaswalla have been named as standby players. 
+2021-05-09 17:18:16.825212 +14155238886 +918279756297 covidnews corona Please put your query in given format 
+2021-05-09 17:18:20.963666 +14155238886 +919462447291 covidnews sports 
+Team India squad for WTC final and Test series against England announced
+
+
+The BCCI today announced the Team India squad for the inaugural ICC World Test Championship (WTC) final and the five-match Test series against England. The BCCI has named 20 members in the squad with KL Rahul and Wriddhiman Saha's selection being subject to fitness clearance. Abhimanyu Easwaran, Prasidh Krishna, Avesh Khan and Arzan Nagwaswalla have been named as standby players. 
+2021-05-09 17:18:32.864773 +14155238886 +919462447291 covidnews pandemic Please put your query in given format 
+2021-05-09 17:18:40.513788 +14155238886 +918279756297 covidnews hospital Please put your query in given format 
+2021-05-09 17:18:43.934916 +14155238886 +919462447291 covidnews economica Please put your query in given format 
+2021-05-09 17:18:50.865262 +14155238886 +919462447291 covidnews economics Please put your query in given format 
+2021-05-09 17:18:57.927378 +14155238886 +919462447291 covidnews world 
+India doesn't need to listen to lectures from anyone about vaccine supplies: French Prez
+
+
+Talking about COVID-19 vaccine shortage and criticism aimed at the Indian government, French President Emmanuel Macron said, "India does not need to listen to lectures from anyone about vaccine supplies." He added, "India has exported a lot for humanity to many countries. We know what situation India is in." Macron made the remark during the India-EU virtual summit. 
+2021-05-09 17:19:20.159300 +14155238886 +918279756297 covidnews disease 
+Encephalitis gives way to 319 deaths in UP
+
+
+In only 24-hours, 10-more children have succumbed to Encephalitis at BRD Medical College in Gorakhpur, UP. The death toll for this disease has reached to 319 out of 1560 admitted for this disease (mostly children). Encephalitis is acute inflammation (swelling up) of the brain resulting either from a viral-infection or when the body's own immune system mistakenly attacks brain tissue. 
+2021-05-09 17:19:36.482162 +14155238886 +918279756297 covidnews corona virus Please put your query in given format 
+2021-05-09 17:19:40.945603 +14155238886 +919462447291 covidnews coronavirus Please put your query in given format 
+2021-05-09 17:19:45.519114 +14155238886 +918279756297 covidnews coronavirus Please put your query in given format 
+2021-05-09 17:20:07.044690 +14155238886 +919462447291 covidnews assembly election Please put your query in given format 
+2021-05-09 17:20:16.962507 +14155238886 +919462447291 covidnews india 
+India beat NZ 3-2 to enter CWG hockey finals
+
+
+In the CWG men's hockey semi-final against New Zealand on Saturday, India got a 3-2 victory, securing their place in the finals. The team rose from a 2-0 score to a 3-2 score, and will now been seen playing the finals against Australia on Sunday. Interestingly, in the last CWG in Delhi, the same teams met in the finals.  
+2021-05-09 17:20:17.643430 +14155238886 +918279756297 covidnews assembly election Please put your query in given format 
