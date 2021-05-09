@@ -88,4 +88,4 @@ def getNews(category):
 
     return newsDictionary
 
-print(getNews("disease"))
+
