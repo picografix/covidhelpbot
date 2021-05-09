@@ -29,7 +29,7 @@ def getNews(category):
         'data': []
     }
     query = category+" inshorts"
-    for j in search(query, tld="co.in", num=1, stop=3, pause=2):
+    for j in search(query, tld="co.in", num=1, stop=2, pause=2):
         url=j 
         try:
             htmlBody = requests.get(url)
