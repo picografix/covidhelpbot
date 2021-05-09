@@ -71,7 +71,7 @@ def bot():
             for i in range(len(newstock)):
                 reply+=news["data"][i]["title"]+"\n\n"+news["data"][i]["content"]
                 alink=news["data"][i]["imageUrl"]
-                msg.media(alink)
+            msg.media(alink)
         except:
             reply= "Please put your query in given format"
         msg.body(reply)
