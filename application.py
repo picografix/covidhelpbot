@@ -109,7 +109,7 @@ def bot():
                 state+= i+" "
             state=state[:-1]
         c,r,d,a = statistics.driver(state)
-        reply = "\nConfirmed: "+ str(c) +"\nRecovered: "+str(r)+"\nActive: "+str(a)+"\nDeceased: "+str(d)
+        reply = "\n✅Confirmed: "+ str(c) +"\n✅Recovered: "+str(r)+"\n✅Active: "+str(a)+"\n✅Deceased: "+str(d)
         msg.body(reply)
         responded=True
         completionMsg=reply

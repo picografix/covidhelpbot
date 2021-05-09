@@ -11390,3 +11390,66 @@ Confirmed: 5053336
 Recovered: 4347592
 Active: 630468
 Deceased: 75276 
+2021-05-09 16:41:10.098294 +14155238886 +919462447291 ✅ Job Done 
+2021-05-09 16:41:23.171333 +14155238886 +919462447291 ✔️ Job Done 
+2021-05-09 16:41:42.637013 +14155238886 +919462447291 ☑️ Job Done 
+2021-05-09 16:47:58.903720 +14155238886 +919205922375 bothelp Hi I am PicoBot, How can I help you ?
+
+Type 'contact' for developers contact 
+
+Type 'tasks' for list of available tasks 
+2021-05-09 16:48:08.823010 +14155238886 +919205922375 contact Hi I am Gauransh Soni
+Sophomore @ IIT Delhi
+Email - picografix@gmail.com
+Contact No. 9462447291 
+2021-05-09 16:48:18.169390 +14155238886 +919205922375 tasks Here is a list of items I can do
+1)Type 'covidhelp <cityname> <Oxygen or Remedesivir or Plasma>' to get recent leads for asked item
+2)Type 'covidinfo <state>' to get recent statistics of covid cases in your state
+3)Type 'emergency <pincode>' to get the contact number of emergency services in your area
+4)Type 'covidvaccine <pincode>' to check availability of vaccine in your area
+5)Type 'help' to get more info 
+2021-05-09 16:48:40.317618 +14155238886 +919205922375 covidvaccine 122018 No Available slot for given day 
+2021-05-09 16:48:49.723967 +14155238886 +919205922375 emergency 122018 Job Done 
+2021-05-09 16:48:58.419204 +14155238886 +919205922375 bothelp Hi I am PicoBot, How can I help you ?
+
+Type 'contact' for developers contact 
+
+Type 'tasks' for list of available tasks 
+2021-05-09 16:49:09.735785 +14155238886 +919205922375 covidinfo haryana 
+Confirmed: 602349
+Recovered: 480785
+Active: 116110
+Deceased: 5454 
+2021-05-09 16:49:41.077298 +14155238886 +919205922375 covidhelp gurgaon oxygen 
+Oxygen cans available in Gurgaon 
+Rs 650 for 6 ltr. can
+Contact- 8860864384
+Verified at 4:28pm, 09/05/21
+
+#COVID19 #CovidIndiaInfo #COVID19India #CovidHelp #Verified #Oxygencans #Gurgaon
+-----------------
+Oxygen Beds are available at Pristyn care hospital, Gurgaon.
+Criterion for admission -
+SPO-2 : above 85
+HRCT value : upto 14 
+
+If anyone is in need pls call Mr zaffer : +91 93116 00584
+#Verified at 3:30 pm 
+#COVID19India 
+#SOSDelhi 
+#CovidResources
+-----------------
+@BackupBae Hi,
+Verified, 40+ oxygen beds available in Gurgaon
+This is for mild and moderate cases only.
+
+Last verified on 9th May 2021.
+Address: Pristyn Care, Sector 40, Gurgaon
+Contact Number: 8792739537
+#verifiedcovidresources #Gurgaon #DelhiCovid
+----------------- 
+2021-05-09 16:50:41.021376 +14155238886 +919462447291 covidinfo india 
+✅Confirmed: 22295234
+✅Recovered: 18311454
+✅Active: 3741377
+✅Deceased: 242403 
