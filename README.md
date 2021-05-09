@@ -18,3 +18,12 @@ I can help you find verified leads from twitter just by sending a whatsapp messa
 For eg. to get info about beds in **Delhi** send message `covidhelp delhi beds`
 
 ###  More tasks adding Soon
+
+Upcoming Targets                                         |
+|----------------|
+|Message Database|            
+|Covid Vaccine Info in image format|          
+|List of emergency Contact in locality implementation|
+|Covid Statistics|
+|Covid News|
+
