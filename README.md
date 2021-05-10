@@ -1,4 +1,4 @@
-# Welcome to PicoBot!
+# Welcome to Covidhelp Bot!
 
 Hi! I'm your bot friend which will help you in these tough times. I have some predefined tasks and functions which will help you find vaccine in your locality, Leads for beds, oxygen and much more.
 
